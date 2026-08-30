@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#fff4b8" />
+    <title>Dino vs Dino!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header>
+        <p class="eyebrow">TAP • HOLD • ROAR!</p>
+        <h1>DINO <span>vs</span> DINO!</h1>
+        <p id="place-label" class="place-label">MADAGASCAR DINO DUEL</p>
+      </header>
+
+      <section class="pair-picker" aria-label="Choose dinosaur pair">
+        <button class="pair-button active" data-pair="madagascar">🌴 Madagascar pair</button>
+        <button class="pair-button" data-pair="usa">🏜️ USA pair</button>
+      </section>
+
+      <section class="arena" aria-label="Dinosaur arena">
+        <div class="cloud cloud-one">☁</div><div class="cloud cloud-two">☁</div>
+        <div class="dino-card hunter-card" id="hunter-card">
+          <p class="role">CARNIVORE</p>
+          <div id="hunter-symbol" class="dino-symbol" aria-hidden="true">ᕦ(ò_óˇ)ᕤ</div>
+          <h2 id="hunter-name">MAJUNGASAURUS</h2>
+          <p class="dino-say" id="hunter-say">“CHOMP! CHOMP!”</p>
+          <div class="score-pill"><span id="hunter-score">0</span> points</div>
+        </div>
+
+        <div class="versus" aria-hidden="true">VS</div>
+
+        <div class="dino-card plant-card" id="plant-card">
+          <p class="role">HERBIVORE</p>
+          <div id="plant-symbol" class="dino-symbol" aria-hidden="true">ᓚᘏᗢ</div>
+          <h2 id="plant-name">RAPETOSAURUS</h2>
+          <p class="dino-say" id="plant-say">“LEAF POWER!”</p>
+          <div class="score-pill"><span id="plant-score">0</span> points</div>
+        </div>
+      </section>
+
+      <section class="turn-panel" aria-live="polite">
+        <p id="turn-message">Majungasaurus goes first!</p>
+        <div class="target-score">First dino to <strong>72</strong> wins!</div>
+      </section>
+
+      <section class="controls" aria-label="Game controls">
+        <button id="action-button" class="action-button hunter-action" type="button">
+          <span id="action-icon">🦷</span>
+          <span id="action-label">HOLD TO CHOMP!</span>
+          <small>Hold your finger here</small>
+        </button>
+        <div id="hold-meter" class="hold-meter" aria-hidden="true"><div></div></div>
+        <p class="help-text" id="help-text">Hold until the teeth are full to earn the next points!</p>
+      </section>
+
+      <button id="reset-button" class="reset-button" type="button">↻ New Dino Game</button>
+    </main>
+
+    <div id="winner-modal" class="winner-modal hidden" role="dialog" aria-modal="true" aria-labelledby="winner-title">
+      <div class="winner-card">
+        <div class="confetti">★ ✦ ★ ✦ ★</div>
+        <div id="winner-symbol" class="winner-symbol">ᕦ(ò_óˇ)ᕤ</div>
+        <h2 id="winner-title">MAJUNGASAURUS WINS!</h2>
+        <p id="winner-text">Got all 72 points! ROAR!</p>
+        <button id="play-again" class="play-again" type="button">PLAY AGAIN!</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
